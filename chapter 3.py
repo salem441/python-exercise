@@ -1,4 +1,4 @@
-#Rewrite your pay computation to give the employee 1.5 times the
+# Rewrite your pay computation to give the employee 1.5 times the
 # hourly rate for hours worked above 40 hours.
 # Enter Hours: 45
 # Enter Rate: 10
@@ -19,17 +19,21 @@ print("Pay:", pay)
 # Error, please enter numeric input
 # Enter Hours: forty
 # Error, please enter numeric input
-hours = float(input("Enter Hours: "))
-rate = float(input("Enter Rate: "))
+try:
+    hours = float(input("Enter Hours: "))
+    rate = float(input("Enter Rate: "))
 except ValueError:
     print("Error, please enter numeric input")
-quit()
+    quit()
+
 if hours > 40:
     overtime_hours = hours - 40
     pay = (40 * rate) + (overtime_hours * rate * 1.5)
-    else:
+else:
     pay = hours * rate
-    print("Pay:", pay)
+
+print("Pay:", pay)
+
 
 # Write a program to prompt for a score between 0.0 and 1.0. If the
 # score is out of range, print an error message. If the score is between 0.0 and 1.0,
@@ -55,4 +59,3 @@ else:
     else:
         grade = "F"
     print("Grade:", grade)
-    
